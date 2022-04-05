@@ -1,16 +1,16 @@
-package com.bigbraingang.diaryapp.ui.notifications;
+package com.bigbraingang.diaryapp.ui.summary;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class NotificationsViewModel extends ViewModel {
+public class SummaryViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public NotificationsViewModel() {
+    public SummaryViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("This is notifications fragment");
+        mText.setValue("This is summary fragment");
     }
 
     public LiveData<String> getText() {
