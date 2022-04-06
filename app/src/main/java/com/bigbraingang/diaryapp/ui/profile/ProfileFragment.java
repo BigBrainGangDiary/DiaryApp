@@ -10,9 +10,10 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.bigbraingang.diaryapp.databinding.FragmentProfileBinding;
+import com.bigbraingang.diaryapp.ui.summary.EditPopUp;
+import com.bigbraingang.diaryapp.ui.summary.EnumProfile;
 
 public class ProfileFragment extends Fragment {
 
@@ -36,10 +37,25 @@ public class ProfileFragment extends Fragment {
         this.nameValue = binding.profileNameValue;
         this.emergencyContactValue = binding.profileEmergencyContactValue;
         this.getHelpButton = binding.profileGetHelpButton;
-
-
         View root = binding.getRoot();
 
+        nameLinearLayout.setOnClickListener( v -> {
+            EditPopUp popUp = new EditPopUp(EnumProfile.NAME);
+            popUp.displayPopup(root, getLayoutInflater());
+        });
+        ageLinearLayout.setOnClickListener( v -> {
+            EditPopUp popUp = new EditPopUp(EnumProfile.AGE);
+            popUp.displayPopup(root, getLayoutInflater());
+        });
+        emergencyContactLinearLayout.setOnClickListener( v -> {
+            EditPopUp popUp = new EditPopUp(EnumProfile.EMERGENCY);
+            popUp.displayPopup(root, getLayoutInflater());
+        });
+
+        getHelpButton.setOnClickListener(v -> {
+            EditPopUp popUp = new EditPopUp(EnumProfile.GETHELP);
+            popUp.displayGetHelpPopUp(root, getLayoutInflater(), getActivity());
+        });
         return root;
     }
 

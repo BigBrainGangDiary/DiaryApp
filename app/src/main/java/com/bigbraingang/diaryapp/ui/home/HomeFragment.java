@@ -1,7 +1,5 @@
 package com.bigbraingang.diaryapp.ui.home;
 
-import android.app.AlertDialog;
-import android.content.Context;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -13,9 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.fragment.app.DialogFragment;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.bigbraingang.diaryapp.R;
 import com.bigbraingang.diaryapp.databinding.FragmentHomeBinding;
@@ -27,6 +23,7 @@ import java.util.Calendar;
 public class HomeFragment extends Fragment {
     private Button submitButton;
     private TextView entry;
+    private TextView descriptionOfRadioButtons;
     private RadioButton radioButton1;
     private RadioButton radioButton2;
     private RadioButton radioButton3;
@@ -39,7 +36,7 @@ public class HomeFragment extends Fragment {
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+        descriptionOfRadioButtons = root.findViewById(R.id.text_home);
         submitButton = root.findViewById(R.id.homeSubmitButton);
         entry = root.findViewById(R.id.entryTextBox);
         radioButton1 = root.findViewById(R.id.radioButton1);
@@ -48,6 +45,7 @@ public class HomeFragment extends Fragment {
         radioButton4 = root.findViewById(R.id.radioButton4);
         radioButton5 = root.findViewById(R.id.radioButton5);
 
+        descriptionOfRadioButtons.setText("Select 1-5 on how you are feeling today.");
 
         submitButton.setOnClickListener(new View.OnClickListener(){
            @Override
@@ -70,7 +68,6 @@ public class HomeFragment extends Fragment {
                radioButton5.setChecked(false);
            }
         });
-        final TextView textView = binding.textHome;
         return root;
     }
 
