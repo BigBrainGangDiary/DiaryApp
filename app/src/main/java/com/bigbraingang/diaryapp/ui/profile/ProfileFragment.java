@@ -12,8 +12,6 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.bigbraingang.diaryapp.databinding.FragmentProfileBinding;
-import com.bigbraingang.diaryapp.ui.summary.EditPopUp;
-import com.bigbraingang.diaryapp.ui.summary.EnumProfile;
 
 public class ProfileFragment extends Fragment {
 

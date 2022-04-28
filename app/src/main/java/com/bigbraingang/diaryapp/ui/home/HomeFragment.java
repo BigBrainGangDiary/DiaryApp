@@ -20,6 +20,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.bigbraingang.diaryapp.DataManager;
+import com.bigbraingang.diaryapp.MySQLiteOpenHelper;
 import com.bigbraingang.diaryapp.QuoteDialog;
 import com.bigbraingang.diaryapp.QuoteManager;
 import com.bigbraingang.diaryapp.R;
@@ -46,8 +48,11 @@ public class HomeFragment extends Fragment {
     private RadioButton radioButton4;
     private RadioButton radioButton5;
     private FragmentHomeBinding binding;
-    DateFormat date = new SimpleDateFormat("MMM dd yyyy, h:mm");
+    private DateFormat date = new SimpleDateFormat("MMM dd yyyy");
+    private DateFormat time = new SimpleDateFormat("HH:MM");
     public String quote;
+
+    private DataManager dm;
 
     //    private Toast toast;
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -63,6 +68,7 @@ public class HomeFragment extends Fragment {
         radioButton4 = root.findViewById(R.id.radioButton4);
         radioButton5 = root.findViewById(R.id.radioButton5);
 
+        dm = new DataManager(getContext());
         descriptionOfRadioButtons.setText("Select 1-5 on how you are feeling today.");
 
         fabButton.setOnClickListener(new View.OnClickListener(){
@@ -88,12 +94,12 @@ public class HomeFragment extends Fragment {
                int rating = getChecked();                                          // Save ratings
                String textEntry = entry.getText().toString();                      // Save textEntry
                String dateFormat = date.format(Calendar.getInstance().getTime());  // Save Date
-
-               // save to SQL
+               String timeFormat = time.format(Calendar.getInstance().getTime());  // Save time
+               // Save entry to SQLite DB.
+               dm.insert(textEntry, Integer.toString(rating), dateFormat, timeFormat);
+               Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
 
                // Clear entries
-//               Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
-
                entry.setText("");
                radioButton1.setChecked(false);
                radioButton2.setChecked(false);
