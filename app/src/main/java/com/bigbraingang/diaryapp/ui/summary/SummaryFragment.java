@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bigbraingang.diaryapp.DataManager;
 import com.bigbraingang.diaryapp.R;
 import com.bigbraingang.diaryapp.databinding.FragmentSummaryBinding;
+import com.jjoe64.graphview.GraphView;
+import com.jjoe64.graphview.series.DataPoint;
+import com.jjoe64.graphview.series.LineGraphSeries;
 
 import java.util.ArrayList;
 
@@ -40,7 +43,23 @@ public class SummaryFragment extends Fragment {
         summaryAdapter = new SummaryAdapter(getActivity(), entry, rating, date, time);
         recyclerView.setAdapter(summaryAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+
+
+        GraphView graph = (GraphView) root.findViewById(R.id.graph);
+        DataPoint[] dp = new DataPoint[rating.size()];
+        for(int i=0;i<rating.size();i++){
+            dp[i] = new DataPoint(i, Integer.parseInt(rating.get(i)));
+        }
+        LineGraphSeries<DataPoint> series = new LineGraphSeries<DataPoint>(dp);
+        graph.addSeries(series);
+        graph.getViewport().setScalable(true);
+
+        // activate horizontal scrolling
+        graph.getViewport().setScrollable(true);
+
         return root;
+
+
     }
 
 
