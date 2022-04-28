@@ -22,7 +22,7 @@ public class SummaryFragment extends Fragment {
 
     private FragmentSummaryBinding binding;
     private DataManager dm;
-    ArrayList<String> entry, rating, date;
+    ArrayList<String> entry, rating, date, time;
     SummaryAdapter summaryAdapter;
     RecyclerView recyclerView;
 
@@ -33,10 +33,11 @@ public class SummaryFragment extends Fragment {
         entry = new ArrayList<>();
         rating = new ArrayList<>();
         date = new ArrayList<>();
+        time = new ArrayList<>();
         recyclerView = root.findViewById(R.id.summaryRecyclerView);
 
         storeDataInArrays();
-        summaryAdapter = new SummaryAdapter(getActivity(), entry, rating, date);
+        summaryAdapter = new SummaryAdapter(getActivity(), entry, rating, date, time);
         recyclerView.setAdapter(summaryAdapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         return root;
@@ -52,6 +53,7 @@ public class SummaryFragment extends Fragment {
                 entry.add(cursor.getString(1));
                 rating.add(cursor.getString(2));
                 date.add(cursor.getString(3));
+                time.add(cursor.getString(4));
             }
         }
 

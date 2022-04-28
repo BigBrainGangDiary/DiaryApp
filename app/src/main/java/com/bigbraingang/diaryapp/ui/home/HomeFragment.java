@@ -49,6 +49,7 @@ public class HomeFragment extends Fragment {
     private RadioButton radioButton5;
     private FragmentHomeBinding binding;
     private DateFormat date = new SimpleDateFormat("MMM dd yyyy");
+    private DateFormat time = new SimpleDateFormat("HH:MM");
     public String quote;
 
     private DataManager dm;
@@ -93,10 +94,10 @@ public class HomeFragment extends Fragment {
                int rating = getChecked();                                          // Save ratings
                String textEntry = entry.getText().toString();                      // Save textEntry
                String dateFormat = date.format(Calendar.getInstance().getTime());  // Save Date
-
+               String timeFormat = time.format(Calendar.getInstance().getTime());  // Save time
                // Save entry to SQLite DB.
-               dm.insert(textEntry, Integer.toString(rating), dateFormat);
-//               Toast.makeText(getActivity(), "Entry Added", Toast.LENGTH_LONG).show();
+               dm.insert(textEntry, Integer.toString(rating), dateFormat, timeFormat);
+               Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
 
                // Clear entries
                entry.setText("");

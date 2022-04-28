@@ -18,7 +18,8 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
                     + "entry TEXT NOT NULL, "
                     + "rating TEXT NOT NULL, "
-                    + "date TEXT NOT NULL)";
+                    + "date TEXT NOT NULL, "
+                    + "time TEXT NOT NULL)";
             db.execSQL(newTable);
         } catch (SQLException e) {
             Log.i("info", "DataManagerError - onCreate");
@@ -26,7 +27,7 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
     }
 
     @Override
-    public void onUpgrade(SQLiteDatabase db, int oldVErsion, int newVersion) {
+    public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 
     }
 }

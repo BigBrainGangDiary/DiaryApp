@@ -17,13 +17,14 @@ import java.util.ArrayList;
 
 public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.MyViewHolder> {
     private Context context;
-    private ArrayList entryList, ratingList, dateList;
+    private ArrayList entryList, ratingList, dateList, timeList;
 
-    SummaryAdapter(Context context, ArrayList entry, ArrayList rating, ArrayList date){
+    SummaryAdapter(Context context, ArrayList entry, ArrayList rating, ArrayList date, ArrayList time){
         this.context = context;
         this.entryList = entry;
         this.ratingList = rating;
         this.dateList = date;
+        this.timeList = time;
     }
     @NonNull
     @Override
@@ -38,6 +39,7 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.MyViewHo
         holder.entry_txt.setText(String.valueOf(entryList.get(position)));
         holder.rating_txt.setText("Rating: " + String.valueOf(ratingList.get(position)));
         holder.date_txt.setText(String.valueOf(dateList.get(position)));
+        holder.time_txt.setText(String.valueOf(timeList.get(position)));
 
 
     }
@@ -48,12 +50,13 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.MyViewHo
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView entry_txt, rating_txt, date_txt;
+        TextView entry_txt, rating_txt, date_txt, time_txt;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             entry_txt = itemView.findViewById(R.id.entry_text);
             rating_txt = itemView.findViewById(R.id.rating_text);
             date_txt = itemView.findViewById(R.id.date_text);
+            time_txt = itemView.findViewById(R.id.time_text);
         }
     }
 }

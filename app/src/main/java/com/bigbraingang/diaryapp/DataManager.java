@@ -33,11 +33,11 @@ public class DataManager {
         return cursor;
     }
 
-    public void insert(String entry, String rating, String date){
+    public void insert(String entry, String rating, String date, String time){
         // DESCRIPTION: Insert new Entry into database.
         try{
-            String query = "insert into diary" + "(entry, rating, date) values " +
-                    "( '" + entry + "', '" + rating + "', '" + date + "' )";
+            String query = "insert into diary" + "(entry, rating, date, time) values " +
+                    "( '" + entry + "', '" + rating + "', '" + date + "', '" + time + "' )";
             db.execSQL(query);
         } catch (SQLException e){
             Log.i("info", "DataManagerError - Insert");
