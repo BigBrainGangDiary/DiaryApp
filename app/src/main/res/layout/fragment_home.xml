@@ -50,48 +50,92 @@
 
     <RadioGroup
         android:id="@+id/radioGroup"
-        android:layout_width="272dp"
-        android:layout_height="46dp"
+        android:layout_width="304dp"
+        android:layout_height="50dp"
         android:layout_marginTop="12dp"
         android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/text_home">
 
-        <RadioButton
-            android:id="@+id/radioButton1"
-            android:layout_width="54dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="1"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_weight="1"
+            android:gravity="left">
 
-        <RadioButton
-            android:id="@+id/radioButton2"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:text="2"
-            tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/radioButton1"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_btn_radio1"
+                android:button="@null"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioButton3"
-            android:layout_width="54dp"
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="3"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_weight="1"
+            android:gravity="left">
 
-        <RadioButton
-            android:id="@+id/radioButton4"
-            android:layout_width="54dp"
-            android:layout_height="wrap_content"
-            android:text="4"
-            tools:ignore="TouchTargetSizeCheck" />
+            <RadioButton
+                android:id="@+id/radioButton2"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_btn_radio2"
+                android:button="@null"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
 
-        <RadioButton
-            android:id="@+id/radioButton5"
-            android:layout_width="54dp"
+
+        <LinearLayout
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="5"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:layout_weight="1"
+            android:gravity="left">
+
+            <RadioButton
+                android:id="@+id/radioButton3"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_btn_radio3"
+                android:button="@null"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left">
+
+            <RadioButton
+                android:id="@+id/radioButton4"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_btw_radio4"
+                android:button="@null"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="left">
+
+            <RadioButton
+                android:id="@+id/radioButton5"
+                android:layout_width="54dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/custom_btn_radio5"
+                android:button="@null"
+                tools:ignore="TouchTargetSizeCheck" />
+        </LinearLayout>
+
 
     </RadioGroup>
 
