@@ -1,8 +1,6 @@
-package com.bigbraingang.diaryapp.ui.summary;
+package com.bigbraingang.diaryapp.ui.profile;
 
 import android.app.Activity;
-import android.content.ClipData;
-import android.content.ClipboardManager;
 import android.content.Context;
 import android.view.Gravity;
 import android.view.LayoutInflater;

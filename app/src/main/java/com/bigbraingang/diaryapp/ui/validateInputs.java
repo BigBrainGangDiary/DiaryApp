@@ -3,7 +3,7 @@ import android.app.AlertDialog;
 import android.content.Context;
 import android.util.Log;
 
-import com.bigbraingang.diaryapp.ui.summary.EnumProfile;
+import com.bigbraingang.diaryapp.ui.profile.EnumProfile;
 
 public class validateInputs {
 

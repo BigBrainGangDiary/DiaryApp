@@ -7,6 +7,7 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
     <color name="White">#FFFFFF</color>
     <color name="Ivory">#FFFFF0</color>
     <color name="LightYellow">#FFFFE0</color>
@@ -152,6 +153,8 @@
     <color name="Mulberry">#B95F89</color>
     <color name="LightLightGrey">#D3D3D3</color>
     <color name="FrenchSkyBlue">#67AAF9</color>
-
-
+    <color name="blue">#9BBDF9</color>
+    <color name="purple">#C4E0F9</color>
+    <color name="pink">#B95F89</color>
+    <color name="orange">#F49409</color>
 </resources>

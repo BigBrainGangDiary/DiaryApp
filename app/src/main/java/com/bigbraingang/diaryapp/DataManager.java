@@ -6,6 +6,7 @@ import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
+import android.widget.Toast;
 
 import java.util.Date;
 
@@ -21,55 +22,30 @@ public class DataManager {
     public Cursor selectAll(){
         Cursor cursor = null;
         try {
-            String query = "select * from diary order by date";
+            String query = "select * from diary";
             cursor = db.rawQuery(query, null);
         }
         catch (Exception e) {
             Log.i ("info", "In DataManager selectAll method");
             Log.i ("info", e.getMessage());
         }
-
         //Log.i ("info", "Loaded data " + cursor.getCount());
         return cursor;
     }
 
-    public void insert(String entry, String rating, Date date){
+    public void insert(String entry, String rating, String date, String time){
+        // DESCRIPTION: Insert new Entry into database.
         try{
-            String query = "insert into diary" + "(entry, rating, date) values " +
-                    "( '" + entry + "', '" + rating + "', '" + date + "' )";
+            String query = "insert into diary" + "(entry, rating, date, time) values " +
+                    "( '" + entry + "', '" + rating + "', '" + date + "', '" + time + "' )";
+            db.execSQL(query);
         } catch (SQLException e){
             Log.i("info", "DataManagerError - Insert");
         }
-        Log.i("info", "Added new entry into diary");
-
-    }
-}
-
-class MySQLiteOpenHelper extends SQLiteOpenHelper{
-    public MySQLiteOpenHelper(Context context){
-        super(context, "diary", null, 1);
-    }
-    public void onCreate (SQLiteDatabase db) {
-
-        try {
-            String newTable = "create table contact  ("
-                    + "_id integer primary key autoincrement not null, "
-                    + "entry text not null, "
-                    + "rating text, "
-                    + "date date, "
-                    + "street text)";
-
-            db.execSQL(newTable);
-        }
-        catch (SQLException e) {
-            Log.i ("info", "DataManagerError - onCreate");
-        }
     }
 
 
-    public void onUpgrade (SQLiteDatabase db, int oldVErsion, int newVersion) {
 
-    }
 }
 
 
