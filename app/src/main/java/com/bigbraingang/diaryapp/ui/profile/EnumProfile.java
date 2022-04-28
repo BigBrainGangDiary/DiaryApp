@@ -1,4 +1,4 @@
-package com.bigbraingang.diaryapp.ui.summary;
+package com.bigbraingang.diaryapp.ui.profile;
 
 public enum EnumProfile {
     NAME,
