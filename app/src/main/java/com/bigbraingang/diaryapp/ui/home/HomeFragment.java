@@ -92,7 +92,7 @@ public class HomeFragment extends Fragment {
                // save to SQL
 
                // Clear entries
-//               Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
+               Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
 
                entry.setText("");
                radioButton1.setChecked(false);
