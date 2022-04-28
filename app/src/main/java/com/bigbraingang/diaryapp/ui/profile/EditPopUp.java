@@ -2,6 +2,7 @@ package com.bigbraingang.diaryapp.ui.profile;
 
 import android.app.Activity;
 import android.content.Context;
+import android.database.Cursor;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -27,6 +28,7 @@ public class EditPopUp {
         this.targetDetails = targetDetails;
     }
     private DataManager dm;
+    private Cursor c;
 
 
     public void setClipboard(Context context, String text) {
@@ -63,7 +65,9 @@ public class EditPopUp {
         ViewGroup inputViewGroup = popupView.findViewById(R.id.editProfileLinearLayout);
         TextView popUpText = popupView.findViewById(R.id.popupTextView);
         View inputField;
+
         dm = new DataManager(parentView.getContext());
+        c = dm.getProfile();
 
         switch (targetDetails){
             case AGE:

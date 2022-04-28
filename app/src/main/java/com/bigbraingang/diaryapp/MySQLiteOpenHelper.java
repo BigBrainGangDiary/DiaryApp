@@ -25,11 +25,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
             String profileTable = "CREATE TABLE profile ("
                     + "_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
                     + "name TEXT NOT NULL, "
-                    + "contact TEXT NOT NULL, "
-                    + "age TEXT NOT NULL)";
+                    + "age TEXT NOT NULL, "
+                    + "contact TEXT NOT NULL)";
             db.execSQL(profileTable);
 
-//            String insertProfile = "Insert"
+            // Insert just one person for a profile.
+            String insertProfile = "Insert into profile" + " (name, age, contact) values " +
+                    "( 'Enter Name', 'Enter Age', 'Enter Emergency Contact' )";
+            db.execSQL(insertProfile);
+
         } catch (SQLException e) {
             Log.i("info", "DataManagerError - onCreate");
         }

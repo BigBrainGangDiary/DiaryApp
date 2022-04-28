@@ -44,6 +44,17 @@ public class DataManager {
         }
     }
 
+    public Cursor getProfile(){
+        Cursor cursor = null;
+        try{
+            String q = "select * from profile";
+            cursor = db.rawQuery(q, null);
+        } catch (Exception e) {
+            Log.i("info", "Getting Profile Error");
+        }
+        return cursor;
+    }
+
 
 
 }
