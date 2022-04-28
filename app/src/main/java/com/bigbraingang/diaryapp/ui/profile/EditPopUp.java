@@ -12,6 +12,8 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigbraingang.diaryapp.DataManager;
+import com.bigbraingang.diaryapp.MainActivity;
 import com.bigbraingang.diaryapp.R;
 import com.bigbraingang.diaryapp.ui.validateInputs;
 import java.lang.String;
@@ -20,10 +22,11 @@ import java.lang.String;
 
 public class EditPopUp {
     private final EnumProfile targetDetails;
-
+    private TextView name, age, emergency;
     public EditPopUp(EnumProfile targetDetails){
         this.targetDetails = targetDetails;
     }
+    private DataManager dm;
 
 
     public void setClipboard(Context context, String text) {
@@ -56,9 +59,11 @@ public class EditPopUp {
 
     public void displayPopup(View parentView, LayoutInflater inflater){
         View popupView = inflater.inflate(R.layout.popuptemplate, null);
+        View profileView = inflater.inflate(R.layout.fragment_profile, null);
         ViewGroup inputViewGroup = popupView.findViewById(R.id.editProfileLinearLayout);
         TextView popUpText = popupView.findViewById(R.id.popupTextView);
         View inputField;
+        dm = new DataManager(parentView.getContext());
 
         switch (targetDetails){
             case AGE:
@@ -105,13 +110,17 @@ public class EditPopUp {
                 case EMERGENCY:
                     EditText emergencyContactEdit = popupView.findViewById(R.id.editEmergencyContactEditText);
                     String newContact = emergencyContactEdit.getText().toString();
-                    // TODO: SAVE IN DATABASE AND CHECK IF PHONE NUMBER.
+                    // TODO: SAVE IN DATABASE
+
                     popupWindow.dismiss();
                     break;
                 case NAME:
                     EditText nameEdit = popupView.findViewById(R.id.editNameEditText);
                     String newName = nameEdit.getText().toString();
+                    Toast.makeText(parentView.getContext(), newName, Toast.LENGTH_LONG).show();
 
+                    name = parentView.findViewById(R.id.profileNameValue);
+                    name.setText(newName);
                     // no validation because anyone's name can be anything.
                     // TODO: SAVE IN DATABASE.
                     popupWindow.dismiss();

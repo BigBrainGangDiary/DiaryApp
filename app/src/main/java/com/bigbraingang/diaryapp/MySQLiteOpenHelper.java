@@ -21,6 +21,15 @@ public class MySQLiteOpenHelper extends SQLiteOpenHelper {
                     + "date TEXT NOT NULL, "
                     + "time TEXT NOT NULL)";
             db.execSQL(newTable);
+
+            String profileTable = "CREATE TABLE profile ("
+                    + "_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "
+                    + "name TEXT NOT NULL, "
+                    + "contact TEXT NOT NULL, "
+                    + "age TEXT NOT NULL)";
+            db.execSQL(profileTable);
+
+//            String insertProfile = "Insert"
         } catch (SQLException e) {
             Log.i("info", "DataManagerError - onCreate");
         }
