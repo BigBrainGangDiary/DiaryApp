@@ -49,7 +49,7 @@ public class HomeFragment extends Fragment {
     private RadioButton radioButton5;
     private FragmentHomeBinding binding;
     private DateFormat date = new SimpleDateFormat("MMM dd yyyy");
-    private DateFormat time = new SimpleDateFormat("HH:MM");
+    private DateFormat time = new SimpleDateFormat("h:mm a");
     public String quote;
 
     private DataManager dm;

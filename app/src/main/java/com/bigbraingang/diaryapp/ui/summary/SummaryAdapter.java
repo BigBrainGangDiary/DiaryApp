@@ -36,10 +36,10 @@ public class SummaryAdapter extends RecyclerView.Adapter<SummaryAdapter.MyViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
-        holder.entry_txt.setText(String.valueOf(entryList.get(position)));
-        holder.rating_txt.setText("Rating: " + String.valueOf(ratingList.get(position)));
-        holder.date_txt.setText(String.valueOf(dateList.get(position)));
-        holder.time_txt.setText(String.valueOf(timeList.get(position)));
+        holder.entry_txt.setText(String.valueOf(entryList.get(getItemCount() - position - 1)));
+        holder.rating_txt.setText("Rating: " + String.valueOf(ratingList.get(getItemCount() - position - 1)));
+        holder.date_txt.setText(String.valueOf(dateList.get(getItemCount() - position - 1)));
+        holder.time_txt.setText(String.valueOf(timeList.get(getItemCount() - position - 1)));
 
 
     }

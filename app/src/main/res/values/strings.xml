@@ -16,5 +16,8 @@
     <string name="need_help">Need Help?</string>
     <string name="suicide_prevention_number">800-273-8255</string>
     <string name="copyButton">Please Copy Number and Call</string>
+    <string name="namevalue">Please enter your name</string>
+    <string name="contactvalue">Please enter your emergency contact</string>
+    <string name="agevalue">Please enter your age</string>
 
 </resources>
