@@ -15,6 +15,7 @@
             android:id="@+id/editBirthDateEditText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@drawable/custom_input"
             android:hint="@string/label_age"
             android:inputType="number" />
     </com.google.android.material.textfield.TextInputLayout>

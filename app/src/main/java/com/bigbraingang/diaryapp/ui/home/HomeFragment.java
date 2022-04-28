@@ -100,6 +100,9 @@ public class HomeFragment extends Fragment {
                Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
 
                // Clear entries
+
+               //Toast.makeText(getActivity(), String.valueOf(rating), Toast.LENGTH_LONG).show();
+
                entry.setText("");
                radioButton1.setChecked(false);
                radioButton2.setChecked(false);
