@@ -41,7 +41,7 @@ android:orientation="vertical">
 
     <TextView
         android:id="@+id/profileNameValue"
-        android:text="Nothing"
+        android:text="Arnold Williams"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
@@ -88,6 +88,7 @@ android:orientation="vertical">
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingEnd="15dp"
+        android:text="68"
         android:paddingBottom="20dp"
         tools:ignore="RtlSymmetry" />
 
@@ -130,6 +131,7 @@ android:orientation="vertical">
         android:layout_height="wrap_content"
         android:paddingTop="20dp"
         android:paddingEnd="15dp"
+        android:text="911"
         android:paddingBottom="20dp"
         tools:ignore="RtlSymmetry" />
 
